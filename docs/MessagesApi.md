@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**ScheduleMessage**](MessagesApi.md#schedulemessage) | **POST** /message/schedule | 
 [**SendMessage**](MessagesApi.md#sendmessage) | **POST** /message/send | 
 
-
 <a name="cancelscheduledjob"></a>
 # **CancelScheduledJob**
 > CancelledMessageResponse CancelScheduledJob (string messageid)
@@ -72,14 +71,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getinboxmessages"></a>
 # **GetInboxMessages**
-> MessagesResponse GetInboxMessages (Query query)
+> MessagesResponse GetInboxMessages (Query body)
 
 
 
@@ -105,11 +103,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
-            var query = new Query(); // Query | 
+            var body = new Query(); // Query | 
 
             try
             {
-                MessagesResponse result = apiInstance.GetInboxMessages(query);
+                MessagesResponse result = apiInstance.GetInboxMessages(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,7 +123,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**Query**](Query.md)|  | 
+ **body** | [**Query**](Query.md)|  | 
 
 ### Return type
 
@@ -141,7 +139,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getmessagebyid"></a>
 # **GetMessageById**
 > MessageResponse GetMessageById (string messageid)
@@ -202,14 +199,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getmessages"></a>
 # **GetMessages**
-> MessagesResponse GetMessages (Query query)
+> List<MessagesResponse> GetMessages (Query body)
 
 
 
@@ -235,11 +231,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
-            var query = new Query(); // Query | 
+            var body = new Query(); // Query | 
 
             try
             {
-                MessagesResponse result = apiInstance.GetMessages(query);
+                List&lt;MessagesResponse&gt; result = apiInstance.GetMessages(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -255,11 +251,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | [**Query**](Query.md)|  | 
+ **body** | [**Query**](Query.md)|  | 
 
 ### Return type
 
-[**MessagesResponse**](MessagesResponse.md)
+[**List<MessagesResponse>**](MessagesResponse.md)
 
 ### Authorization
 
@@ -271,10 +267,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="schedulemessage"></a>
 # **ScheduleMessage**
-> ScheduledMessageResponse ScheduleMessage (Message smsMessage)
+> ScheduledMessageResponse ScheduleMessage (Message body)
 
 
 
@@ -300,11 +295,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
-            var smsMessage = new Message(); // Message | Message properties
+            var body = new Message(); // Message | Message properties
 
             try
             {
-                ScheduledMessageResponse result = apiInstance.ScheduleMessage(smsMessage);
+                ScheduledMessageResponse result = apiInstance.ScheduleMessage(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -320,7 +315,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smsMessage** | [**Message**](Message.md)| Message properties | 
+ **body** | [**Message**](Message.md)| Message properties | 
 
 ### Return type
 
@@ -336,10 +331,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="sendmessage"></a>
 # **SendMessage**
-> SendMessageResponse SendMessage (Message smsMessage)
+> SendMessageResponse SendMessage (Message body)
 
 
 
@@ -365,11 +359,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi();
-            var smsMessage = new Message(); // Message | Message properties
+            var body = new Message(); // Message | Message properties
 
             try
             {
-                SendMessageResponse result = apiInstance.SendMessage(smsMessage);
+                SendMessageResponse result = apiInstance.SendMessage(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -385,7 +379,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smsMessage** | [**Message**](Message.md)| Message properties | 
+ **body** | [**Message**](Message.md)| Message properties | 
 
 ### Return type
 
@@ -401,4 +395,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

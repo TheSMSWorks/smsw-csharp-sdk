@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Content** | **string** |  | 
 **Created** | **string** |  | 
 **Customerid** | **string** |  | 
-**Destination** | **decimal?** |  | 
-**Failurereason** | [**MessageResponseFailurereason**](MessageResponseFailurereason.md) |  | [optional] 
+**Destination** | [**decimal?**](BigDecimal.md) |  | 
+**Failurereason** | **Object** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Keyword** | **string** |  | 
 **Messageid** | **string** |  | 

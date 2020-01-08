@@ -7,14 +7,13 @@ Method | HTTP request | Description
 [**KeySecret**](AuthApi.md#keysecret) | **GET** /auth/getApiKey | 
 [**Login**](AuthApi.md#login) | **POST** /auth/token | 
 
-
 <a name="keysecret"></a>
 # **KeySecret**
 > ApiKeyResponse KeySecret (string customerid)
 
 
 
-Generates an API Key/Secret pair
+Utility method. Please generate your API key by following the instructions on your account page at https://thesmsworks.co.uk/user/login
 
 ### Example
 ```csharp
@@ -31,7 +30,7 @@ namespace Example
         public void main()
         {
             var apiInstance = new AuthApi();
-            var customerid = customerid_example;  // string | The Customer ID
+            var customerid = customerid_example;  // string | Utility method. Please generate your API key by following the instructions on your account page at https://thesmsworks.co.uk/user/login
 
             try
             {
@@ -51,7 +50,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerid** | **string**| The Customer ID | 
+ **customerid** | **string**| Utility method. Please generate your API key by following the instructions on your account page at https://thesmsworks.co.uk/user/login | 
 
 ### Return type
 
@@ -63,18 +62,17 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="login"></a>
 # **Login**
-> TokenResponse Login (Login credentials)
+> TokenResponse Login (Login body)
 
 
 
-Generates a Json Web Token
+Generates a JSON Web Token for including in the Authorization header of all your calls to the API. This only needs to be done once. Generate the customer ID, API Key & Secret required for this call from the API Key tab your account page.
 
 ### Example
 ```csharp
@@ -91,11 +89,11 @@ namespace Example
         public void main()
         {
             var apiInstance = new AuthApi();
-            var credentials = new Login(); // Login | API Key & Secret
+            var body = new Login(); // Login | API Key & Secret
 
             try
             {
-                TokenResponse result = apiInstance.Login(credentials);
+                TokenResponse result = apiInstance.Login(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -111,7 +109,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **credentials** | [**Login**](Login.md)| API Key &amp; Secret | 
+ **body** | [**Login**](Login.md)| API Key &amp; Secret | 
 
 ### Return type
 
@@ -127,4 +125,3 @@ No authorization required
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

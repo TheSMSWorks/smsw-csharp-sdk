@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**ScheduleBatch**](BatchMessagesApi.md#schedulebatch) | **POST** /batch/schedule | 
 [**SendBatch**](BatchMessagesApi.md#sendbatch) | **POST** /batch/send | 
 
-
 <a name="cancelscheduledbatchjob"></a>
 # **CancelScheduledBatchJob**
 > CancelledMessageResponse CancelScheduledBatchJob (string batchid)
@@ -70,11 +69,10 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="getbatchbyid"></a>
 # **GetBatchById**
 > MessagesResponse GetBatchById (string batchid)
@@ -135,14 +133,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="schedulebatch"></a>
 # **ScheduleBatch**
-> ScheduledBatchResponse ScheduleBatch (BatchMessage smsMessage)
+> ScheduledBatchResponse ScheduleBatch (BatchMessage body)
 
 
 
@@ -168,11 +165,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BatchMessagesApi();
-            var smsMessage = new BatchMessage(); // BatchMessage | Message properties
+            var body = new BatchMessage(); // BatchMessage | Message properties
 
             try
             {
-                ScheduledBatchResponse result = apiInstance.ScheduleBatch(smsMessage);
+                ScheduledBatchResponse result = apiInstance.ScheduleBatch(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -188,7 +185,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smsMessage** | [**BatchMessage**](BatchMessage.md)| Message properties | 
+ **body** | [**BatchMessage**](BatchMessage.md)| Message properties | 
 
 ### Return type
 
@@ -204,10 +201,9 @@ Name | Type | Description  | Notes
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="sendbatch"></a>
 # **SendBatch**
-> BatchMessageResponse SendBatch (BatchMessage smsMessage)
+> BatchMessageResponse SendBatch (BatchMessage body)
 
 
 
@@ -233,11 +229,11 @@ namespace Example
             // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new BatchMessagesApi();
-            var smsMessage = new BatchMessage(); // BatchMessage | Message properties
+            var body = new BatchMessage(); // BatchMessage | Message properties
 
             try
             {
-                BatchMessageResponse result = apiInstance.SendBatch(smsMessage);
+                BatchMessageResponse result = apiInstance.SendBatch(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -253,7 +249,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **smsMessage** | [**BatchMessage**](BatchMessage.md)| Message properties | 
+ **body** | [**BatchMessage**](BatchMessage.md)| Message properties | 
 
 ### Return type
 
@@ -269,4 +265,3 @@ Name | Type | Description  | Notes
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
