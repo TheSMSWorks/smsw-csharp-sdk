@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Batchid** | **string** |  | 
+**Batchid** | **string** |  | [optional] 
 **Content** | **string** |  | 
 **Created** | **string** |  | 
 **Customerid** | **string** |  | 

@@ -32,7 +32,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageResponse" /> class.
         /// </summary>
-        /// <param name="batchid">batchid (required).</param>
+        /// <param name="batchid">batchid.</param>
         /// <param name="content">content (required).</param>
         /// <param name="created">created (required).</param>
         /// <param name="customerid">customerid (required).</param>
@@ -48,15 +48,6 @@ namespace IO.Swagger.Model
         /// <param name="tag">tag (required).</param>
         public MessageResponse(string batchid = default(string), string content = default(string), string created = default(string), string customerid = default(string), decimal? destination = default(decimal?), Object failurereason = default(Object), string id = default(string), string keyword = default(string), string messageid = default(string), string modified = default(string), string schedule = default(string), string status = default(string), string sender = default(string), string tag = default(string))
         {
-            // to ensure "batchid" is required (not null)
-            if (batchid == null)
-            {
-                throw new InvalidDataException("batchid is a required property for MessageResponse and cannot be null");
-            }
-            else
-            {
-                this.Batchid = batchid;
-            }
             // to ensure "content" is required (not null)
             if (content == null)
             {
@@ -156,6 +147,7 @@ namespace IO.Swagger.Model
             {
                 this.Tag = tag;
             }
+            this.Batchid = batchid;
             this.Failurereason = failurereason;
             this.Id = id;
         }
