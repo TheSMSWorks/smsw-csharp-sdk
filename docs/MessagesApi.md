@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getinboxmessages"></a>
 # **GetInboxMessages**
-> MessagesResponse GetInboxMessages (Query body)
+> List<MessagesResponse> GetInboxMessages (Query body)
 
 
 
@@ -107,7 +107,7 @@ namespace Example
 
             try
             {
-                MessagesResponse result = apiInstance.GetInboxMessages(body);
+                List&lt;MessagesResponse&gt; result = apiInstance.GetInboxMessages(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessagesResponse**](MessagesResponse.md)
+[**List<MessagesResponse>**](MessagesResponse.md)
 
 ### Authorization
 

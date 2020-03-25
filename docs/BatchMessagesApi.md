@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getbatchbyid"></a>
 # **GetBatchById**
-> MessagesResponse GetBatchById (string batchid)
+> List<MessagesResponse> GetBatchById (string batchid)
 
 
 
@@ -105,7 +105,7 @@ namespace Example
 
             try
             {
-                MessagesResponse result = apiInstance.GetBatchById(batchid);
+                List&lt;MessagesResponse&gt; result = apiInstance.GetBatchById(batchid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessagesResponse**](MessagesResponse.md)
+[**List<MessagesResponse>**](MessagesResponse.md)
 
 ### Authorization
 

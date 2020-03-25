@@ -52,8 +52,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>MessagesResponse</returns>
-        MessagesResponse GetInboxMessages (Query body);
+        /// <returns>List&lt;MessagesResponse&gt;</returns>
+        List<MessagesResponse> GetInboxMessages (Query body);
 
         /// <summary>
         /// 
@@ -63,8 +63,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>ApiResponse of MessagesResponse</returns>
-        ApiResponse<MessagesResponse> GetInboxMessagesWithHttpInfo (Query body);
+        /// <returns>ApiResponse of List&lt;MessagesResponse&gt;</returns>
+        ApiResponse<List<MessagesResponse>> GetInboxMessagesWithHttpInfo (Query body);
         /// <summary>
         /// 
         /// </summary>
@@ -180,8 +180,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>Task of MessagesResponse</returns>
-        System.Threading.Tasks.Task<MessagesResponse> GetInboxMessagesAsync (Query body);
+        /// <returns>Task of List&lt;MessagesResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<MessagesResponse>> GetInboxMessagesAsync (Query body);
 
         /// <summary>
         /// 
@@ -191,8 +191,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (MessagesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MessagesResponse>> GetInboxMessagesAsyncWithHttpInfo (Query body);
+        /// <returns>Task of ApiResponse (List&lt;MessagesResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<MessagesResponse>>> GetInboxMessagesAsyncWithHttpInfo (Query body);
         /// <summary>
         /// 
         /// </summary>
@@ -534,10 +534,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>MessagesResponse</returns>
-        public MessagesResponse GetInboxMessages (Query body)
+        /// <returns>List&lt;MessagesResponse&gt;</returns>
+        public List<MessagesResponse> GetInboxMessages (Query body)
         {
-             ApiResponse<MessagesResponse> localVarResponse = GetInboxMessagesWithHttpInfo(body);
+             ApiResponse<List<MessagesResponse>> localVarResponse = GetInboxMessagesWithHttpInfo(body);
              return localVarResponse.Data;
         }
 
@@ -546,8 +546,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>ApiResponse of MessagesResponse</returns>
-        public ApiResponse< MessagesResponse > GetInboxMessagesWithHttpInfo (Query body)
+        /// <returns>ApiResponse of List&lt;MessagesResponse&gt;</returns>
+        public ApiResponse< List<MessagesResponse> > GetInboxMessagesWithHttpInfo (Query body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -602,9 +602,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<MessagesResponse>(localVarStatusCode,
+            return new ApiResponse<List<MessagesResponse>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (MessagesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MessagesResponse)));
+                (List<MessagesResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MessagesResponse>)));
         }
 
         /// <summary>
@@ -612,10 +612,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>Task of MessagesResponse</returns>
-        public async System.Threading.Tasks.Task<MessagesResponse> GetInboxMessagesAsync (Query body)
+        /// <returns>Task of List&lt;MessagesResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<MessagesResponse>> GetInboxMessagesAsync (Query body)
         {
-             ApiResponse<MessagesResponse> localVarResponse = await GetInboxMessagesAsyncWithHttpInfo(body);
+             ApiResponse<List<MessagesResponse>> localVarResponse = await GetInboxMessagesAsyncWithHttpInfo(body);
              return localVarResponse.Data;
 
         }
@@ -625,8 +625,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (MessagesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<MessagesResponse>> GetInboxMessagesAsyncWithHttpInfo (Query body)
+        /// <returns>Task of ApiResponse (List&lt;MessagesResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<MessagesResponse>>> GetInboxMessagesAsyncWithHttpInfo (Query body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -681,9 +681,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<MessagesResponse>(localVarStatusCode,
+            return new ApiResponse<List<MessagesResponse>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (MessagesResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MessagesResponse)));
+                (List<MessagesResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MessagesResponse>)));
         }
 
         /// <summary>

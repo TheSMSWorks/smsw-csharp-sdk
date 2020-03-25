@@ -39,7 +39,7 @@ namespace IO.Swagger.Model
         /// <param name="destination">destination (required).</param>
         /// <param name="failurereason">failurereason.</param>
         /// <param name="id">id.</param>
-        /// <param name="keyword">keyword (required).</param>
+        /// <param name="keyword">keyword.</param>
         /// <param name="messageid">messageid (required).</param>
         /// <param name="modified">modified (required).</param>
         /// <param name="schedule">schedule (required).</param>
@@ -83,15 +83,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.Destination = destination;
-            }
-            // to ensure "keyword" is required (not null)
-            if (keyword == null)
-            {
-                throw new InvalidDataException("keyword is a required property for MessageResponse and cannot be null");
-            }
-            else
-            {
-                this.Keyword = keyword;
             }
             // to ensure "messageid" is required (not null)
             if (messageid == null)
@@ -150,6 +141,7 @@ namespace IO.Swagger.Model
             this.Batchid = batchid;
             this.Failurereason = failurereason;
             this.Id = id;
+            this.Keyword = keyword;
         }
         
         /// <summary>

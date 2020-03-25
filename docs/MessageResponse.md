@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Destination** | [**decimal?**](BigDecimal.md) |  | 
 **Failurereason** | **Object** |  | [optional] 
 **Id** | **string** |  | [optional] 
-**Keyword** | **string** |  | 
+**Keyword** | **string** |  | [optional] 
 **Messageid** | **string** |  | 
 **Modified** | **string** |  | 
 **Schedule** | **string** |  | 
