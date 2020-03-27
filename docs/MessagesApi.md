@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getinboxmessages"></a>
 # **GetInboxMessages**
-> List<MessagesResponse> GetInboxMessages (Query body)
+> List<MessageResponse> GetInboxMessages (Query body)
 
 
 
@@ -107,7 +107,7 @@ namespace Example
 
             try
             {
-                List&lt;MessagesResponse&gt; result = apiInstance.GetInboxMessages(body);
+                List&lt;MessageResponse&gt; result = apiInstance.GetInboxMessages(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<MessagesResponse>**](MessagesResponse.md)
+[**List<MessageResponse>**](MessageResponse.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 <a name="getmessages"></a>
 # **GetMessages**
-> List<MessagesResponse> GetMessages (Query body)
+> List<MessageResponse> GetMessages (Query body)
 
 
 
@@ -235,7 +235,7 @@ namespace Example
 
             try
             {
-                List&lt;MessagesResponse&gt; result = apiInstance.GetMessages(body);
+                List&lt;MessageResponse&gt; result = apiInstance.GetMessages(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<MessagesResponse>**](MessagesResponse.md)
+[**List<MessageResponse>**](MessageResponse.md)
 
 ### Authorization
 

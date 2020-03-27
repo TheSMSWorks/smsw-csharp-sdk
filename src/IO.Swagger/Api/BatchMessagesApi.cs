@@ -52,8 +52,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>List&lt;MessagesResponse&gt;</returns>
-        List<MessagesResponse> GetBatchById (string batchid);
+        /// <returns>List&lt;MessageResponse&gt;</returns>
+        List<MessageResponse> GetBatchById (string batchid);
 
         /// <summary>
         /// 
@@ -63,8 +63,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>ApiResponse of List&lt;MessagesResponse&gt;</returns>
-        ApiResponse<List<MessagesResponse>> GetBatchByIdWithHttpInfo (string batchid);
+        /// <returns>ApiResponse of List&lt;MessageResponse&gt;</returns>
+        ApiResponse<List<MessageResponse>> GetBatchByIdWithHttpInfo (string batchid);
         /// <summary>
         /// 
         /// </summary>
@@ -138,8 +138,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>Task of List&lt;MessagesResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<MessagesResponse>> GetBatchByIdAsync (string batchid);
+        /// <returns>Task of List&lt;MessageResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<MessageResponse>> GetBatchByIdAsync (string batchid);
 
         /// <summary>
         /// 
@@ -149,8 +149,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>Task of ApiResponse (List&lt;MessagesResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MessagesResponse>>> GetBatchByIdAsyncWithHttpInfo (string batchid);
+        /// <returns>Task of ApiResponse (List&lt;MessageResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<MessageResponse>>> GetBatchByIdAsyncWithHttpInfo (string batchid);
         /// <summary>
         /// 
         /// </summary>
@@ -450,10 +450,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>List&lt;MessagesResponse&gt;</returns>
-        public List<MessagesResponse> GetBatchById (string batchid)
+        /// <returns>List&lt;MessageResponse&gt;</returns>
+        public List<MessageResponse> GetBatchById (string batchid)
         {
-             ApiResponse<List<MessagesResponse>> localVarResponse = GetBatchByIdWithHttpInfo(batchid);
+             ApiResponse<List<MessageResponse>> localVarResponse = GetBatchByIdWithHttpInfo(batchid);
              return localVarResponse.Data;
         }
 
@@ -462,8 +462,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>ApiResponse of List&lt;MessagesResponse&gt;</returns>
-        public ApiResponse< List<MessagesResponse> > GetBatchByIdWithHttpInfo (string batchid)
+        /// <returns>ApiResponse of List&lt;MessageResponse&gt;</returns>
+        public ApiResponse< List<MessageResponse> > GetBatchByIdWithHttpInfo (string batchid)
         {
             // verify the required parameter 'batchid' is set
             if (batchid == null)
@@ -510,9 +510,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<MessagesResponse>>(localVarStatusCode,
+            return new ApiResponse<List<MessageResponse>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<MessagesResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MessagesResponse>)));
+                (List<MessageResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MessageResponse>)));
         }
 
         /// <summary>
@@ -520,10 +520,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>Task of List&lt;MessagesResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MessagesResponse>> GetBatchByIdAsync (string batchid)
+        /// <returns>Task of List&lt;MessageResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<MessageResponse>> GetBatchByIdAsync (string batchid)
         {
-             ApiResponse<List<MessagesResponse>> localVarResponse = await GetBatchByIdAsyncWithHttpInfo(batchid);
+             ApiResponse<List<MessageResponse>> localVarResponse = await GetBatchByIdAsyncWithHttpInfo(batchid);
              return localVarResponse.Data;
 
         }
@@ -533,8 +533,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="batchid">The ID of the batch you would like returned</param>
-        /// <returns>Task of ApiResponse (List&lt;MessagesResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<MessagesResponse>>> GetBatchByIdAsyncWithHttpInfo (string batchid)
+        /// <returns>Task of ApiResponse (List&lt;MessageResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<MessageResponse>>> GetBatchByIdAsyncWithHttpInfo (string batchid)
         {
             // verify the required parameter 'batchid' is set
             if (batchid == null)
@@ -581,9 +581,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<MessagesResponse>>(localVarStatusCode,
+            return new ApiResponse<List<MessageResponse>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (List<MessagesResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MessagesResponse>)));
+                (List<MessageResponse>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MessageResponse>)));
         }
 
         /// <summary>
