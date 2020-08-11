@@ -7,9 +7,11 @@ Name | Type | Description | Notes
 **Content** | **string** |  | 
 **Created** | **string** |  | 
 **Customerid** | **string** |  | 
+**Deliveryreporturl** | **string** |  | [optional] 
 **Destination** | [**decimal?**](BigDecimal.md) |  | 
 **Failurereason** | **Object** |  | [optional] 
 **Id** | **string** |  | [optional] 
+**Identifier** | **string** |  | [optional] 
 **Keyword** | **string** |  | [optional] 
 **Messageid** | **string** |  | 
 **Modified** | **string** |  | 

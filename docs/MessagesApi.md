@@ -5,10 +5,12 @@ All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelScheduledJob**](MessagesApi.md#cancelscheduledjob) | **DELETE** /messages/schedule/{messageid} | 
+[**GetFailedMessages**](MessagesApi.md#getfailedmessages) | **POST** /messages/failed | 
 [**GetInboxMessages**](MessagesApi.md#getinboxmessages) | **POST** /messages/inbox | 
 [**GetMessageById**](MessagesApi.md#getmessagebyid) | **GET** /messages/{messageid} | 
 [**GetMessages**](MessagesApi.md#getmessages) | **POST** /messages | 
 [**ScheduleMessage**](MessagesApi.md#schedulemessage) | **POST** /message/schedule | 
+[**SendFlashMessage**](MessagesApi.md#sendflashmessage) | **POST** /message/flash | 
 [**SendMessage**](MessagesApi.md#sendmessage) | **POST** /message/send | 
 
 <a name="cancelscheduledjob"></a>
@@ -72,6 +74,70 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="getfailedmessages"></a>
+# **GetFailedMessages**
+> List<MessageResponse> GetFailedMessages (Query body)
+
+
+
+Get failed messages matching your search criteria
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class GetFailedMessagesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: JWT
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi();
+            var body = new Query(); // Query | 
+
+            try
+            {
+                List&lt;MessageResponse&gt; result = apiInstance.GetFailedMessages(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MessagesApi.GetFailedMessages: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Query**](Query.md)|  | 
+
+### Return type
+
+[**List<MessageResponse>**](MessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -320,6 +386,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScheduledMessageResponse**](ScheduledMessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="sendflashmessage"></a>
+# **SendFlashMessage**
+> SendMessageResponse SendFlashMessage (Message body)
+
+
+
+Sends an SMS flash message, which appears on the recipients lock screen
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class SendFlashMessageExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: JWT
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi();
+            var body = new Message(); // Message | Message properties
+
+            try
+            {
+                SendMessageResponse result = apiInstance.SendFlashMessage(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MessagesApi.SendFlashMessage: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Message**](Message.md)| Message properties | 
+
+### Return type
+
+[**SendMessageResponse**](SendMessageResponse.md)
 
 ### Authorization
 

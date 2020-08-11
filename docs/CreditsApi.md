@@ -28,6 +28,11 @@ namespace Example
     {
         public void main()
         {
+            // Configure API key authorization: JWT
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
             var apiInstance = new CreditsApi();
 
             try
@@ -53,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[JWT](../README.md#JWT)
 
 ### HTTP request headers
 
