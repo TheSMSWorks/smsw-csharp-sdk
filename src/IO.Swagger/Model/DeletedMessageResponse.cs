@@ -24,33 +24,49 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// TokenResponse
+    /// DeletedMessageResponse
     /// </summary>
     [DataContract]
-        public partial class TokenResponse :  IEquatable<TokenResponse>, IValidatableObject
+        public partial class DeletedMessageResponse :  IEquatable<DeletedMessageResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TokenResponse" /> class.
+        /// Initializes a new instance of the <see cref="DeletedMessageResponse" /> class.
         /// </summary>
-        /// <param name="token">token (required).</param>
-        public TokenResponse(string token = default(string))
+        /// <param name="messageid">messageid (required).</param>
+        /// <param name="status">status (required).</param>
+        public DeletedMessageResponse(string messageid = default(string), string status = default(string))
         {
-            // to ensure "token" is required (not null)
-            if (token == null)
+            // to ensure "messageid" is required (not null)
+            if (messageid == null)
             {
-                throw new InvalidDataException("token is a required property for TokenResponse and cannot be null");
+                throw new InvalidDataException("messageid is a required property for DeletedMessageResponse and cannot be null");
             }
             else
             {
-                this.Token = token;
+                this.Messageid = messageid;
+            }
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new InvalidDataException("status is a required property for DeletedMessageResponse and cannot be null");
+            }
+            else
+            {
+                this.Status = status;
             }
         }
         
         /// <summary>
-        /// Gets or Sets Token
+        /// Gets or Sets Messageid
         /// </summary>
-        [DataMember(Name="token", EmitDefaultValue=false)]
-        public string Token { get; set; }
+        [DataMember(Name="messageid", EmitDefaultValue=false)]
+        public string Messageid { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name="status", EmitDefaultValue=false)]
+        public string Status { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -59,8 +75,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class TokenResponse {\n");
-            sb.Append("  Token: ").Append(Token).Append("\n");
+            sb.Append("class DeletedMessageResponse {\n");
+            sb.Append("  Messageid: ").Append(Messageid).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -81,24 +98,29 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as TokenResponse);
+            return this.Equals(input as DeletedMessageResponse);
         }
 
         /// <summary>
-        /// Returns true if TokenResponse instances are equal
+        /// Returns true if DeletedMessageResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of TokenResponse to be compared</param>
+        /// <param name="input">Instance of DeletedMessageResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(TokenResponse input)
+        public bool Equals(DeletedMessageResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Token == input.Token ||
-                    (this.Token != null &&
-                    this.Token.Equals(input.Token))
+                    this.Messageid == input.Messageid ||
+                    (this.Messageid != null &&
+                    this.Messageid.Equals(input.Messageid))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    (this.Status != null &&
+                    this.Status.Equals(input.Status))
                 );
         }
 
@@ -111,8 +133,10 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Token != null)
-                    hashCode = hashCode * 59 + this.Token.GetHashCode();
+                if (this.Messageid != null)
+                    hashCode = hashCode * 59 + this.Messageid.GetHashCode();
+                if (this.Status != null)
+                    hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

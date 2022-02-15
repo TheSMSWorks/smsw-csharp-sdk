@@ -5,13 +5,14 @@ All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelScheduledJob**](MessagesApi.md#cancelscheduledjob) | **DELETE** /messages/schedule/{messageid} | 
+[**DeleteMessage**](MessagesApi.md#deletemessage) | **DELETE** /messages/{messageid} | 
 [**GetFailedMessages**](MessagesApi.md#getfailedmessages) | **POST** /messages/failed | 
 [**GetInboxMessages**](MessagesApi.md#getinboxmessages) | **POST** /messages/inbox | 
 [**GetMessageById**](MessagesApi.md#getmessagebyid) | **GET** /messages/{messageid} | 
 [**GetMessages**](MessagesApi.md#getmessages) | **POST** /messages | 
+[**MessageSendPost**](MessagesApi.md#messagesendpost) | **POST** /message/send | 
 [**ScheduleMessage**](MessagesApi.md#schedulemessage) | **POST** /message/schedule | 
 [**SendFlashMessage**](MessagesApi.md#sendflashmessage) | **POST** /message/flash | 
-[**SendMessage**](MessagesApi.md#sendmessage) | **POST** /message/send | 
 
 <a name="cancelscheduledjob"></a>
 # **CancelScheduledJob**
@@ -66,6 +67,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CancelledMessageResponse**](CancelledMessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="deletemessage"></a>
+# **DeleteMessage**
+> DeletedMessageResponse DeleteMessage (string messageid)
+
+
+
+Delete the message with the mathcing messageid
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DeleteMessageExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: JWT
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi();
+            var messageid = messageid_example;  // string | The ID of the message you would like returned
+
+            try
+            {
+                DeletedMessageResponse result = apiInstance.DeleteMessage(messageid);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MessagesApi.DeleteMessage: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **messageid** | **string**| The ID of the message you would like returned | 
+
+### Return type
+
+[**DeletedMessageResponse**](DeletedMessageResponse.md)
 
 ### Authorization
 
@@ -275,7 +340,7 @@ Name | Type | Description  | Notes
 
 
 
-Get messages matching your search criteria
+Retrieve up to 1000 messages matching your search criteria
 
 ### Example
 ```csharp
@@ -322,6 +387,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List<MessageResponse>**](MessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+<a name="messagesendpost"></a>
+# **MessageSendPost**
+> SendMessageResponse MessageSendPost (Message body)
+
+
+
+Send an SMS Message
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class MessageSendPostExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: JWT
+            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi();
+            var body = new Message(); // Message | Message properties
+
+            try
+            {
+                SendMessageResponse result = apiInstance.MessageSendPost(body);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MessagesApi.MessageSendPost: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Message**](Message.md)| Message properties | 
+
+### Return type
+
+[**SendMessageResponse**](SendMessageResponse.md)
 
 ### Authorization
 
@@ -435,70 +564,6 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling MessagesApi.SendFlashMessage: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Message**](Message.md)| Message properties | 
-
-### Return type
-
-[**SendMessageResponse**](SendMessageResponse.md)
-
-### Authorization
-
-[JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-<a name="sendmessage"></a>
-# **SendMessage**
-> SendMessageResponse SendMessage (Message body)
-
-
-
-Sends an SMS message
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class SendMessageExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: JWT
-            Configuration.Default.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.AddApiKeyPrefix("Authorization", "Bearer");
-
-            var apiInstance = new MessagesApi();
-            var body = new Message(); // Message | Message properties
-
-            try
-            {
-                SendMessageResponse result = apiInstance.SendMessage(body);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling MessagesApi.SendMessage: " + e.Message );
             }
         }
     }

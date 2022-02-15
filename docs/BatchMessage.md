@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **Deliveryreporturl** | **string** | The url to which we should POST delivery reports to for this message. If none is specified, we&#x27;ll use the global delivery report URL that you&#x27;ve configured on your account page. | [optional] 
 **Schedule** | **string** | Date-time at which to send the batch. This is only used by the batch/schedule service. | [optional] 
 **Tag** | **string** | An identifying label for the message, which you can use to filter and report on messages you&#x27;ve sent later. Ideal for campaigns. A maximum of 280 characters. | [optional] 
-**Ttl** | [**decimal?**](BigDecimal.md) | The number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer. | [optional] 
+**Ttl** | [**decimal?**](BigDecimal.md) | The number of minutes before the delivery report is deleted. Optional. Omit to prevent delivery report deletion. Integer. | [optional] 
+**Validity** | [**decimal?**](BigDecimal.md) | The optional number of minutes to attempt delivery before the message is marked as EXPIRED. Optional. The default is 2880 minutes. Integer. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

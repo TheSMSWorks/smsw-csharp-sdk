@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **Deliveryreporturl** | **string** | The url to which we should POST delivery reports to for this message. If none is specified, we&#x27;ll use the global delivery report URL that you&#x27;ve configured on your account page. | [optional] 
 **Schedule** | **string** | Date at which to send the message. This is only used by the message/schedule service and can be left empty for other services. | [optional] 
 **Tag** | **string** | An identifying label for the message, which you can use to filter and report on messages you&#x27;ve sent later. Ideal for campaigns. A maximum of 280 characters. | [optional] 
-**Ttl** | [**decimal?**](BigDecimal.md) | The optional number of minutes before the message is deleted. Optional. Omit to prevent delivery report deletion. Integer. | [optional] 
+**Ttl** | [**decimal?**](BigDecimal.md) | The optional number of minutes before the delivery report is deleted. Optional. Omit to prevent delivery report deletion. Integer. | [optional] 
 **Responseemail** | **List&lt;string&gt;** | An optional list of email addresses to forward responses to this specific message to. An SMS Works Reply Number is required to use this feature. | [optional] 
 **Metadata** | **Object** |  | [optional] 
+**Validity** | [**decimal?**](BigDecimal.md) | The optional number of minutes to attempt delivery before the message is marked as EXPIRED. Optional. The default is 2880 minutes. Integer. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

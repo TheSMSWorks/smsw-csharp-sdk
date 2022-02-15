@@ -4,7 +4,7 @@ The SMS Works API
 
 The SMS Works provides a low-cost, reliable SMS API for developers. Pay only for delivered texts, all failed messages are refunded.
 
-OpenAPI spec version: 1.4.0
+OpenAPI spec version: 1.6.0
 
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -81,7 +81,7 @@ OpenAPI spec version: 1.4.0
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\IO.Swagger\IO.Swagger.csproj">
-          <Project>{D02710F4-EC70-4A27-9C8B-575A8A410B9B}</Project>
+          <Project>{7CF612C2-FEB1-48F6-B7D7-9172560A63EB}</Project>
           <Name>IO.Swagger</Name>
       </ProjectReference>
   </ItemGroup>
