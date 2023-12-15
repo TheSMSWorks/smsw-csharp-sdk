@@ -1,4 +1,5 @@
-# IO.Swagger.Model.MessageResponse
+# Org.OpenAPITools.Model.MessageResponse
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -8,8 +9,8 @@ Name | Type | Description | Notes
 **Created** | **string** |  | 
 **Customerid** | **string** |  | 
 **Deliveryreporturl** | **string** |  | [optional] 
-**Destination** | [**decimal?**](BigDecimal.md) |  | 
-**Failurereason** | **Object** |  | [optional] 
+**Destination** | **decimal** |  | 
+**Failurereason** | [**MessageResponseFailurereason**](MessageResponseFailurereason.md) |  | [optional] 
 **Id** | **string** |  | [optional] 
 **Identifier** | **string** |  | [optional] 
 **Keyword** | **string** |  | [optional] 

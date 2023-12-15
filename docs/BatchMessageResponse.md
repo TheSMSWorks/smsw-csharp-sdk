@@ -1,4 +1,5 @@
-# IO.Swagger.Model.BatchMessageResponse
+# Org.OpenAPITools.Model.BatchMessageResponse
+
 ## Properties
 
 Name | Type | Description | Notes

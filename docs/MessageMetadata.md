@@ -1,4 +1,5 @@
-# IO.Swagger.Model.MessageMetadata
+# Org.OpenAPITools.Model.MessageMetadata
+
 ## Properties
 
 Name | Type | Description | Notes

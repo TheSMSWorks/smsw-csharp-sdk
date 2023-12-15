@@ -1,4 +1,5 @@
-# IO.Swagger.Model.ScheduledBatchResponse
+# Org.OpenAPITools.Model.ScheduledBatchResponse
+
 ## Properties
 
 Name | Type | Description | Notes

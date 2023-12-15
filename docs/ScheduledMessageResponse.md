@@ -1,4 +1,5 @@
-# IO.Swagger.Model.ScheduledMessageResponse
+# Org.OpenAPITools.Model.ScheduledMessageResponse
+
 ## Properties
 
 Name | Type | Description | Notes

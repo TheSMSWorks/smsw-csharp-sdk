@@ -1,4 +1,5 @@
-# IO.Swagger.Model.DeletedMessageResponse
+# Org.OpenAPITools.Model.DeletedMessageResponse
+
 ## Properties
 
 Name | Type | Description | Notes

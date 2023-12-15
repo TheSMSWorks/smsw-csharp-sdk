@@ -1,4 +1,5 @@
-# IO.Swagger.Model.TestResponse
+# Org.OpenAPITools.Model.TestResponse
+
 ## Properties
 
 Name | Type | Description | Notes

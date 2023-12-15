@@ -1,4 +1,5 @@
-# IO.Swagger.Model.CancelledMessageResponse
+# Org.OpenAPITools.Model.CancelledMessageResponse
+
 ## Properties
 
 Name | Type | Description | Notes

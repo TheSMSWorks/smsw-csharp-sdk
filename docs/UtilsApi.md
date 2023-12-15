@@ -1,15 +1,15 @@
-# IO.Swagger.Api.UtilsApi
+# Org.OpenAPITools.Api.UtilsApi
 
 All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**GetError**](UtilsApi.md#geterror) | **GET** /utils/errors/{errorcode} | 
-[**Test**](UtilsApi.md#test) | **GET** /utils/test | 
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**UtilsErrorsErrorcodeGet**](UtilsApi.md#utilserrorserrorcodeget) | **GET** /utils/errors/{errorcode} |  |
+| [**UtilsTestGet**](UtilsApi.md#utilstestget) | **GET** /utils/test |  |
 
-<a name="geterror"></a>
-# **GetError**
-> ExtendedErrorModel GetError (string errorcode)
+<a id="utilserrorserrorcodeget"></a>
+# **UtilsErrorsErrorcodeGet**
+> ExtendedErrorModel UtilsErrorsErrorcodeGet (string errorcode)
 
 
 
@@ -17,40 +17,68 @@ Returns a sample error object for the given error code. Useful for designing cod
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class GetErrorExample
+    public class UtilsErrorsErrorcodeGetExample
     {
-        public void main()
+        public static void Main()
         {
-            var apiInstance = new UtilsApi();
-            var errorcode = errorcode_example;  // string | The code of the error you would like returned
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.thesmsworks.co.uk/v1";
+            // Configure API key authorization: JWT
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new UtilsApi(config);
+            var errorcode = "errorcode_example";  // string | The code of the error you would like returned
 
             try
             {
-                ExtendedErrorModel result = apiInstance.GetError(errorcode);
+                ExtendedErrorModel result = apiInstance.UtilsErrorsErrorcodeGet(errorcode);
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling UtilsApi.GetError: " + e.Message );
+                Debug.Print("Exception when calling UtilsApi.UtilsErrorsErrorcodeGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the UtilsErrorsErrorcodeGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<ExtendedErrorModel> response = apiInstance.UtilsErrorsErrorcodeGetWithHttpInfo(errorcode);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UtilsApi.UtilsErrorsErrorcodeGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **errorcode** | **string**| The code of the error you would like returned | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **errorcode** | **string** | The code of the error you would like returned |  |
 
 ### Return type
 
@@ -58,17 +86,24 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[JWT](../README.md#JWT)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **0** | Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-<a name="test"></a>
-# **Test**
-> TestResponse Test ()
+
+<a id="utilstestget"></a>
+# **UtilsTestGet**
+> TestResponse UtilsTestGet ()
 
 
 
@@ -76,48 +111,83 @@ Returns the customer ID to the caller
 
 ### Example
 ```csharp
-using System;
+using System.Collections.Generic;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class TestExample
+    public class UtilsTestGetExample
     {
-        public void main()
+        public static void Main()
         {
-            var apiInstance = new UtilsApi();
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.thesmsworks.co.uk/v1";
+            // Configure API key authorization: JWT
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new UtilsApi(config);
 
             try
             {
-                TestResponse result = apiInstance.Test();
+                TestResponse result = apiInstance.UtilsTestGet();
                 Debug.WriteLine(result);
             }
-            catch (Exception e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling UtilsApi.Test: " + e.Message );
+                Debug.Print("Exception when calling UtilsApi.UtilsTestGet: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
             }
         }
     }
 }
 ```
 
+#### Using the UtilsTestGetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<TestResponse> response = apiInstance.UtilsTestGetWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UtilsApi.UtilsTestGetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 This endpoint does not need any parameter.
-
 ### Return type
 
 [**TestResponse**](TestResponse.md)
 
 ### Authorization
 
-No authorization required
+[JWT](../README.md#JWT)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **0** | Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

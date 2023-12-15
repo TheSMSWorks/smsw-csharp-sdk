@@ -1,4 +1,5 @@
-# IO.Swagger.Model.ErrorModel
+# Org.OpenAPITools.Model.ErrorModel
+
 ## Properties
 
 Name | Type | Description | Notes
