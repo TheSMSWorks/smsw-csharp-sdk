@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.TestResponse
+# SMSWorks.Api.Model.TestResponse
 
 ## Properties
 

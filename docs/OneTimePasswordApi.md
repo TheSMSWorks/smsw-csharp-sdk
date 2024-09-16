@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Api.OneTimePasswordApi
+# SMSWorks.Api.Api.OneTimePasswordApi
 
 All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 
@@ -20,9 +20,9 @@ Retrieve an OTP by it's message ID
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -110,15 +110,15 @@ catch (ApiException e)
 
 
 
-Generates and sends a One-Time Password
+Generate and send a One-Time Password
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -205,15 +205,15 @@ catch (ApiException e)
 
 
 
-Generates and sends a One-Time Password
+Verify a One-Time Password
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {

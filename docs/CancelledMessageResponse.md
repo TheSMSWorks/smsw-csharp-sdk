@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CancelledMessageResponse
+# SMSWorks.Api.Model.CancelledMessageResponse
 
 ## Properties
 

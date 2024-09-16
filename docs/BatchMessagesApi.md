@@ -1,30 +1,30 @@
-# Org.OpenAPITools.Api.BatchMessagesApi
+# SMSWorks.Api.Api.BatchMessagesApi
 
 All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BatchAnyPost**](BatchMessagesApi.md#batchanypost) | **POST** /batch/any |  |
+| [**BatchAnyPost**](BatchMessagesApi.md#batchanypost) | **POST** /batch/any | Send a collection of unique SMS messages |
 | [**BatchBatchidGet**](BatchMessagesApi.md#batchbatchidget) | **GET** /batch/{batchid} |  |
-| [**BatchSchedulePost**](BatchMessagesApi.md#batchschedulepost) | **POST** /batch/schedule |  |
-| [**BatchSendPost**](BatchMessagesApi.md#batchsendpost) | **POST** /batch/send |  |
-| [**BatchesScheduleBatchidDelete**](BatchMessagesApi.md#batchesschedulebatchiddelete) | **DELETE** /batches/schedule/{batchid} |  |
+| [**BatchSchedulePost**](BatchMessagesApi.md#batchschedulepost) | **POST** /batch/schedule | Schedule a batch of SMS messages |
+| [**BatchSendPost**](BatchMessagesApi.md#batchsendpost) | **POST** /batch/send | Send an SMS message to multiple recipients |
+| [**BatchesScheduleBatchidDelete**](BatchMessagesApi.md#batchesschedulebatchiddelete) | **DELETE** /batches/schedule/{batchid} | Cancel a scheduled batch |
 
 <a id="batchanypost"></a>
 # **BatchAnyPost**
 > BatchMessageResponse BatchAnyPost (Object messages)
 
+Send a collection of unique SMS messages
 
-
-Sends a collection of unique SMS messages. Batches may contain up to 5000 messages at a time.
+Batches may contain up to 5000 messages at a time.
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -44,6 +44,7 @@ namespace Example
 
             try
             {
+                // Send a collection of unique SMS messages
                 BatchMessageResponse result = apiInstance.BatchAnyPost(messages);
                 Debug.WriteLine(result);
             }
@@ -64,6 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Send a collection of unique SMS messages
     ApiResponse<BatchMessageResponse> response = apiInstance.BatchAnyPostWithHttpInfo(messages);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -112,15 +114,15 @@ catch (ApiException e)
 
 
 
-Retrieve all messages in a batch with the given batch ID
+Retrieve all messages with the given batch ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -206,17 +208,17 @@ catch (ApiException e)
 # **BatchSchedulePost**
 > ScheduledBatchResponse BatchSchedulePost (BatchMessage smsMessage)
 
+Schedule a batch of SMS messages
 
-
-Schedules a batch of SMS messages to be sent at the date time you specify
+Schedules a batch of SMS messages to be sent at the date/time you specify
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -236,6 +238,7 @@ namespace Example
 
             try
             {
+                // Schedule a batch of SMS messages
                 ScheduledBatchResponse result = apiInstance.BatchSchedulePost(smsMessage);
                 Debug.WriteLine(result);
             }
@@ -256,6 +259,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Schedule a batch of SMS messages
     ApiResponse<ScheduledBatchResponse> response = apiInstance.BatchSchedulePostWithHttpInfo(smsMessage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -302,17 +306,17 @@ catch (ApiException e)
 # **BatchSendPost**
 > BatchMessageResponse BatchSendPost (BatchMessage smsMessage)
 
+Send an SMS message to multiple recipients
 
-
-Send a single SMS message to multiple recipients.  Batches may contain up to 5000 messages at a time.
+Batches may contain up to 5000 messages at a time
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -332,6 +336,7 @@ namespace Example
 
             try
             {
+                // Send an SMS message to multiple recipients
                 BatchMessageResponse result = apiInstance.BatchSendPost(smsMessage);
                 Debug.WriteLine(result);
             }
@@ -352,6 +357,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Send an SMS message to multiple recipients
     ApiResponse<BatchMessageResponse> response = apiInstance.BatchSendPostWithHttpInfo(smsMessage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -398,17 +404,17 @@ catch (ApiException e)
 # **BatchesScheduleBatchidDelete**
 > CancelledMessageResponse BatchesScheduleBatchidDelete (string batchid)
 
+Cancel a scheduled batch
 
-
-Cancels a scheduled SMS message
+Cancels a batch of scheduled messages using the supplied batch ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -428,6 +434,7 @@ namespace Example
 
             try
             {
+                // Cancel a scheduled batch
                 CancelledMessageResponse result = apiInstance.BatchesScheduleBatchidDelete(batchid);
                 Debug.WriteLine(result);
             }
@@ -448,6 +455,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Cancel a scheduled batch
     ApiResponse<CancelledMessageResponse> response = apiInstance.BatchesScheduleBatchidDeleteWithHttpInfo(batchid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

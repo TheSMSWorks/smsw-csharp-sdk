@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.SendMessageResponse
+# SMSWorks.Api.Model.SendMessageResponse
 
 ## Properties
 

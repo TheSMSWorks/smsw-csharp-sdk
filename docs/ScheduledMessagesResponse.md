@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ScheduledMessagesResponse
+# SMSWorks.Api.Model.ScheduledMessagesResponse
 details of a message scheduled to be sent at a specified date and time
 
 ## Properties

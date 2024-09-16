@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Message
+# SMSWorks.Api.Model.Message
 SMS message object
 
 ## Properties

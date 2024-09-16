@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ErrorModel
+# SMSWorks.Api.Model.ErrorModel
 
 ## Properties
 

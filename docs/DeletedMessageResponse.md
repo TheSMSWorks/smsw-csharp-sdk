@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.DeletedMessageResponse
+# SMSWorks.Api.Model.DeletedMessageResponse
 
 ## Properties
 

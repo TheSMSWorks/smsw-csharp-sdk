@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.OTPResponse
+# SMSWorks.Api.Model.OTPResponse
 Response schema for the /otp/send method
 
 ## Properties

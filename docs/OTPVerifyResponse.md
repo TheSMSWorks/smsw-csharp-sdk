@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.OTPVerifyResponse
+# SMSWorks.Api.Model.OTPVerifyResponse
 Response schema for the /otp/verify method
 
 ## Properties

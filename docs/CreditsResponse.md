@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.CreditsResponse
+# SMSWorks.Api.Model.CreditsResponse
 
 ## Properties
 

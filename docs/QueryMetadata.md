@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.QueryMetadata
+# SMSWorks.Api.Model.QueryMetadata
 An array of objects containing metadata key/value pairs that have been saved on messages.
 
 ## Properties

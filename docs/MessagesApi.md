@@ -1,35 +1,231 @@
-# Org.OpenAPITools.Api.MessagesApi
+# SMSWorks.Api.Api.MessagesApi
 
 All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**MessageSchedulePost**](MessagesApi.md#messageschedulepost) | **POST** /message/schedule |  |
+| [**BinarySendPost**](MessagesApi.md#binarysendpost) | **POST** /binary/send | Send a binary SMS message |
+| [**MessageFlashPost**](MessagesApi.md#messageflashpost) | **POST** /message/flash |  |
+| [**MessageSchedulePost**](MessagesApi.md#messageschedulepost) | **POST** /message/schedule | Schedule an SMS message |
 | [**MessageSendPost**](MessagesApi.md#messagesendpost) | **POST** /message/send |  |
 | [**MessagesFailedPost**](MessagesApi.md#messagesfailedpost) | **POST** /messages/failed |  |
-| [**MessagesInboxPost**](MessagesApi.md#messagesinboxpost) | **POST** /messages/inbox |  |
+| [**MessagesInboxPost**](MessagesApi.md#messagesinboxpost) | **POST** /messages/inbox | Retrieve unread uncoming messages |
 | [**MessagesMessageidDelete**](MessagesApi.md#messagesmessageiddelete) | **DELETE** /messages/{messageid} |  |
-| [**MessagesMessageidGet**](MessagesApi.md#messagesmessageidget) | **GET** /messages/{messageid} |  |
-| [**MessagesPost**](MessagesApi.md#messagespost) | **POST** /messages |  |
-| [**MessagesScheduleGet**](MessagesApi.md#messagesscheduleget) | **GET** /messages/schedule |  |
-| [**MessagesScheduleMessageidDelete**](MessagesApi.md#messagesschedulemessageiddelete) | **DELETE** /messages/schedule/{messageid} |  |
-| [**SendFlashMessage**](MessagesApi.md#sendflashmessage) | **POST** /message/flash |  |
+| [**MessagesMessageidGet**](MessagesApi.md#messagesmessageidget) | **GET** /messages/{messageid} | Get message by messageid |
+| [**MessagesPost**](MessagesApi.md#messagespost) | **POST** /messages | Get messages matching your criteria |
+| [**MessagesScheduleGet**](MessagesApi.md#messagesscheduleget) | **GET** /messages/schedule | Retrieve scheduled messages |
+| [**MessagesScheduleMessageidDelete**](MessagesApi.md#messagesschedulemessageiddelete) | **DELETE** /messages/schedule/{messageid} | Cancel scheduled SMS message |
+| [**MessagesVolumeGet**](MessagesApi.md#messagesvolumeget) | **GET** /messages/volume | Volume of messages sent since midnight |
 
-<a id="messageschedulepost"></a>
-# **MessageSchedulePost**
-> List&lt;ScheduledMessageResponse&gt; MessageSchedulePost (Message smsMessage)
+<a id="binarysendpost"></a>
+# **BinarySendPost**
+> SendMessageResponse BinarySendPost (Message smsMessage)
 
+Send a binary SMS message
 
-
-Schedules an SMS message to be sent at the date-time you specify
+Sends an SMS Message in Binary format. This can be used to send files and data to devices that process binary content. Especially useful for Internet of Things (IoT). Message content should be encoded in hex pairs (e.g. '65 54 74 73 6d 20 73 65 61 73 65 67 2e')
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
+
+namespace Example
+{
+    public class BinarySendPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.thesmsworks.co.uk/v1";
+            // Configure API key authorization: JWT
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi(config);
+            var smsMessage = new Message(); // Message | Message properties
+
+            try
+            {
+                // Send a binary SMS message
+                SendMessageResponse result = apiInstance.BinarySendPost(smsMessage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MessagesApi.BinarySendPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the BinarySendPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Send a binary SMS message
+    ApiResponse<SendMessageResponse> response = apiInstance.BinarySendPostWithHttpInfo(smsMessage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MessagesApi.BinarySendPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **smsMessage** | [**Message**](Message.md) | Message properties |  |
+
+### Return type
+
+[**SendMessageResponse**](SendMessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Success |  -  |
+| **402** | Error |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="messageflashpost"></a>
+# **MessageFlashPost**
+> SendMessageResponse MessageFlashPost (Message smsMessage)
+
+
+
+Send an SMS flash message
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
+
+namespace Example
+{
+    public class MessageFlashPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.thesmsworks.co.uk/v1";
+            // Configure API key authorization: JWT
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new MessagesApi(config);
+            var smsMessage = new Message(); // Message | Message properties
+
+            try
+            {
+                SendMessageResponse result = apiInstance.MessageFlashPost(smsMessage);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MessagesApi.MessageFlashPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the MessageFlashPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<SendMessageResponse> response = apiInstance.MessageFlashPostWithHttpInfo(smsMessage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MessagesApi.MessageFlashPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **smsMessage** | [**Message**](Message.md) | Message properties |  |
+
+### Return type
+
+[**SendMessageResponse**](SendMessageResponse.md)
+
+### Authorization
+
+[JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Success |  -  |
+| **402** | Error |  -  |
+| **0** | Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="messageschedulepost"></a>
+# **MessageSchedulePost**
+> List&lt;ScheduledMessageResponse&gt; MessageSchedulePost (Message smsMessage)
+
+Schedule an SMS message
+
+Schedules an SMS message to be sent at the date/time you specify
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -49,6 +245,7 @@ namespace Example
 
             try
             {
+                // Schedule an SMS message
                 List<ScheduledMessageResponse> result = apiInstance.MessageSchedulePost(smsMessage);
                 Debug.WriteLine(result);
             }
@@ -69,6 +266,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Schedule an SMS message
     ApiResponse<List<ScheduledMessageResponse>> response = apiInstance.MessageSchedulePostWithHttpInfo(smsMessage);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -122,9 +320,9 @@ Send an SMS Message
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -212,15 +410,15 @@ catch (ApiException e)
 
 
 
-Get failed messages matching your search criteria
+Retrieve failed messages matching your criteria
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -305,17 +503,17 @@ catch (ApiException e)
 # **MessagesInboxPost**
 > List&lt;MessageResponse&gt; MessagesInboxPost (Query query)
 
+Retrieve unread uncoming messages
 
-
-Get unread uncoming messages matching your search criteria
+Retrieve unread uncoming messages matching your criteria
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -335,6 +533,7 @@ namespace Example
 
             try
             {
+                // Retrieve unread uncoming messages
                 List<MessageResponse> result = apiInstance.MessagesInboxPost(query);
                 Debug.WriteLine(result);
             }
@@ -355,6 +554,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Retrieve unread uncoming messages
     ApiResponse<List<MessageResponse>> response = apiInstance.MessagesInboxPostWithHttpInfo(query);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -402,15 +602,15 @@ catch (ApiException e)
 
 
 
-Delete the message with the mathcing messageid
+Delete the message with the matching messageid
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -496,17 +696,17 @@ catch (ApiException e)
 # **MessagesMessageidGet**
 > MessageResponse MessagesMessageidGet (string messageid)
 
+Get message by messageid
 
-
-Retrieve a logged message by the message ID
+Retrieve a delivery report by the message ID
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -526,6 +726,7 @@ namespace Example
 
             try
             {
+                // Get message by messageid
                 MessageResponse result = apiInstance.MessagesMessageidGet(messageid);
                 Debug.WriteLine(result);
             }
@@ -546,6 +747,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get message by messageid
     ApiResponse<MessageResponse> response = apiInstance.MessagesMessageidGetWithHttpInfo(messageid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -592,17 +794,17 @@ catch (ApiException e)
 # **MessagesPost**
 > List&lt;MessageResponse&gt; MessagesPost (Query query)
 
+Get messages matching your criteria
 
-
-Retrieve up to 1000 messages matching your search criteria
+Retrieve up to 1000 messages matching criteria specified in the request
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -622,6 +824,7 @@ namespace Example
 
             try
             {
+                // Get messages matching your criteria
                 List<MessageResponse> result = apiInstance.MessagesPost(query);
                 Debug.WriteLine(result);
             }
@@ -642,6 +845,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get messages matching your criteria
     ApiResponse<List<MessageResponse>> response = apiInstance.MessagesPostWithHttpInfo(query);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -687,17 +891,17 @@ catch (ApiException e)
 # **MessagesScheduleGet**
 > ScheduledMessagesResponse MessagesScheduleGet ()
 
+Retrieve scheduled messages
 
-
-Returns a list of messages scheduled from your account, comprising any messages scheduled in the last 3 months and any scheduled to send in the future
+Return a list of messages scheduled from your account, comprising any messages scheduled in the last 3 months and any scheduled to send in the future
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -716,6 +920,7 @@ namespace Example
 
             try
             {
+                // Retrieve scheduled messages
                 ScheduledMessagesResponse result = apiInstance.MessagesScheduleGet();
                 Debug.WriteLine(result);
             }
@@ -736,6 +941,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Retrieve scheduled messages
     ApiResponse<ScheduledMessagesResponse> response = apiInstance.MessagesScheduleGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -777,17 +983,17 @@ This endpoint does not need any parameter.
 # **MessagesScheduleMessageidDelete**
 > CancelledMessageResponse MessagesScheduleMessageidDelete (string messageid)
 
+Cancel scheduled SMS message
 
-
-Cancels a scheduled SMS message
+Cancels a scheduled SMS message matching the provided messageid
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -807,6 +1013,7 @@ namespace Example
 
             try
             {
+                // Cancel scheduled SMS message
                 CancelledMessageResponse result = apiInstance.MessagesScheduleMessageidDelete(messageid);
                 Debug.WriteLine(result);
             }
@@ -827,6 +1034,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Cancel scheduled SMS message
     ApiResponse<CancelledMessageResponse> response = apiInstance.MessagesScheduleMessageidDeleteWithHttpInfo(messageid);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -868,25 +1076,25 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="sendflashmessage"></a>
-# **SendFlashMessage**
-> SendMessageResponse SendFlashMessage (Message smsMessage)
+<a id="messagesvolumeget"></a>
+# **MessagesVolumeGet**
+> MessageVolumeResponse MessagesVolumeGet ()
 
+Volume of messages sent since midnight
 
-
-Sends an SMS flash message, which appears on the recipients lock screen
+Retrieve the number of messages sent since midnight last night
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
-    public class SendFlashMessageExample
+    public class MessagesVolumeGetExample
     {
         public static void Main()
         {
@@ -898,16 +1106,16 @@ namespace Example
             // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new MessagesApi(config);
-            var smsMessage = new Message(); // Message | Message properties
 
             try
             {
-                SendMessageResponse result = apiInstance.SendFlashMessage(smsMessage);
+                // Volume of messages sent since midnight
+                MessageVolumeResponse result = apiInstance.MessagesVolumeGet();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling MessagesApi.SendFlashMessage: " + e.Message);
+                Debug.Print("Exception when calling MessagesApi.MessagesVolumeGet: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -916,34 +1124,31 @@ namespace Example
 }
 ```
 
-#### Using the SendFlashMessageWithHttpInfo variant
+#### Using the MessagesVolumeGetWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    ApiResponse<SendMessageResponse> response = apiInstance.SendFlashMessageWithHttpInfo(smsMessage);
+    // Volume of messages sent since midnight
+    ApiResponse<MessageVolumeResponse> response = apiInstance.MessagesVolumeGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling MessagesApi.SendFlashMessageWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling MessagesApi.MessagesVolumeGetWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
 ```
 
 ### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **smsMessage** | [**Message**](Message.md) | Message properties |  |
-
+This endpoint does not need any parameter.
 ### Return type
 
-[**SendMessageResponse**](SendMessageResponse.md)
+[**MessageVolumeResponse**](MessageVolumeResponse.md)
 
 ### Authorization
 
@@ -951,15 +1156,14 @@ catch (ApiException e)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Success |  -  |
-| **402** | Error |  -  |
+| **200** | Success |  -  |
 | **0** | Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

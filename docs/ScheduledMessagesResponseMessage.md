@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.ScheduledMessagesResponseMessage
+# SMSWorks.Api.Model.ScheduledMessagesResponseMessage
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.OTP
+# SMSWorks.Api.Model.OTP
 Parameters for the generation and sending of One-Time Passwords
 
 ## Properties

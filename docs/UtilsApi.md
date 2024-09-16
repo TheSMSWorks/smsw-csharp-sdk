@@ -1,17 +1,17 @@
-# Org.OpenAPITools.Api.UtilsApi
+# SMSWorks.Api.Api.UtilsApi
 
 All URIs are relative to *https://api.thesmsworks.co.uk/v1*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**UtilsErrorsErrorcodeGet**](UtilsApi.md#utilserrorserrorcodeget) | **GET** /utils/errors/{errorcode} |  |
-| [**UtilsTestGet**](UtilsApi.md#utilstestget) | **GET** /utils/test |  |
+| [**UtilsErrorsErrorcodeGet**](UtilsApi.md#utilserrorserrorcodeget) | **GET** /utils/errors/{errorcode} | Get error by code |
+| [**UtilsTestGet**](UtilsApi.md#utilstestget) | **GET** /utils/test | Return the customer ID to the caller |
 
 <a id="utilserrorserrorcodeget"></a>
 # **UtilsErrorsErrorcodeGet**
 > ExtendedErrorModel UtilsErrorsErrorcodeGet (string errorcode)
 
-
+Get error by code
 
 Returns a sample error object for the given error code. Useful for designing code to react to errors when they occur for real.
 
@@ -19,9 +19,9 @@ Returns a sample error object for the given error code. Useful for designing cod
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -41,6 +41,7 @@ namespace Example
 
             try
             {
+                // Get error by code
                 ExtendedErrorModel result = apiInstance.UtilsErrorsErrorcodeGet(errorcode);
                 Debug.WriteLine(result);
             }
@@ -61,6 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Get error by code
     ApiResponse<ExtendedErrorModel> response = apiInstance.UtilsErrorsErrorcodeGetWithHttpInfo(errorcode);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -105,17 +107,17 @@ catch (ApiException e)
 # **UtilsTestGet**
 > TestResponse UtilsTestGet ()
 
+Return the customer ID to the caller
 
-
-Returns the customer ID to the caller
+A generic test method which can be used to verify that the API is up and that your calls are authenticated successfully
 
 ### Example
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using SMSWorks.Api.Api;
+using SMSWorks.Api.Client;
+using SMSWorks.Api.Model;
 
 namespace Example
 {
@@ -134,6 +136,7 @@ namespace Example
 
             try
             {
+                // Return the customer ID to the caller
                 TestResponse result = apiInstance.UtilsTestGet();
                 Debug.WriteLine(result);
             }
@@ -154,6 +157,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
+    // Return the customer ID to the caller
     ApiResponse<TestResponse> response = apiInstance.UtilsTestGetWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

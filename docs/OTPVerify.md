@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.OTPVerify
+# SMSWorks.Api.Model.OTPVerify
 Schema for the /oyp/verify method
 
 ## Properties

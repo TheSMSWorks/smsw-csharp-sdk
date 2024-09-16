@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.MetaData
+# SMSWorks.Api.Model.MetaData
 Key/value pair that will be returned to you in the API call response.
 
 ## Properties
